@@ -1,9 +1,37 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Threading.Tasks;
 
-Console.WriteLine("Hello, World!");
+// Запрос: Отвечай на русском языке.
+// ...
+// ... Объясни async/await в C#.
+// ... Дай рабочий пример console app.
+// ... Код должен компилироваться.
+// ... Используй async Task Main().
+// ... После примера объясни каждую важную строку.
 
-var date = DateTime.Now;
-var dayOfWeek = date.DayOfWeek;
-Console.WriteLine($"{dayOfWeek}");
-Console.WriteLine($"{date.ToString(CultureInfo.CurrentCulture)}");
-Console.WriteLine(CultureInfo.CurrentCulture);
+namespace AsyncAwaitExample
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            Console.WriteLine("Начало программы");
+
+            // Вызов асинхронного метода и ожидание его завершения
+            await DownloadDataAsync();
+
+            Console.WriteLine("Конец программы");
+        }
+
+        // Асинхронный метод, который возвращает Task (пустой тип)
+        static async Task DownloadDataAsync()
+        {
+            Console.WriteLine("Начало загрузки данных");
+
+            // Имитация асинхронной операции с помощью Task.Delay
+            await Task.Delay(2000);
+
+            Console.WriteLine("Завершение загрузки данных");
+        }
+    }
+}
